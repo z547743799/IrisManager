@@ -1,0 +1,48 @@
+{{ define "system/notice/notice.html" }}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>通知管理</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row row-lg">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <div class="input-group-btn">
+                                        <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">名称
+                                        </button>
+                                    </div>
+                                    <input type="text" class="form-control" id="condition" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" class="btn btn-primary " onclick="Notice.search()" id="">
+                                    <i class="fa fa-search"></i>&nbsp;搜索
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="bs-bars pull-left">
+                            <button type="button" class="btn btn-primary " onclick="Notice.openAddNotice()" id="">
+                                <i class="fa fa-plus"></i>&nbsp;添加
+                            </button>
+                            <button type="button" class="btn btn-primary button-margin" onclick="Notice.openNoticeDetail()" id="">
+                                <i class="fa fa-plus"></i>&nbsp;修改
+                            </button>
+                            <button type="button" class="btn btn-primary button-margin" onclick="Notice.delete()" id="">
+                                <i class="fa fa-plus"></i>&nbsp;删除
+                            </button>
+                        </div>
+                        <table id="NoticeTable" data-mobile-responsive="true" data-click-to-select="true" class="table table-hover table-striped"
+                            style="margin-top: -40px;">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/public/modular/system/notice/notice.js"></script> {{ end }}
