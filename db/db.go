@@ -2,11 +2,11 @@ package db
 
 import (
 	"fmt"
+	"log"
+	"time"
+
 	"github.com/go-ini/ini"
 	_ "github.com/go-sql-driver/mysql"
-	"log"
-	"os"
-	"time"
 	"github.com/go-xorm/xorm"
 )
 
@@ -15,8 +15,7 @@ var X *xorm.Engine
 
 func init() {
 	var err error
-	dir, _ := os.Getwd()
-	cfg, err := ini.Load(dir + "/config/db.ini")
+	cfg, err := ini.Load("../config/db.ini")
 	if err != nil {
 		log.Fatal(err)
 	}

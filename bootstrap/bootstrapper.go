@@ -101,7 +101,7 @@ func (b *Bootstrapper) SetupErrorHandlers() {
 
 const (
 	// StaticAssets is the root directory for public assets like images, css, js.
-	StaticAssets = "./webapp/"
+	StaticAssets = "./"
 	// Favicon is the relative 9to the "StaticAssets") favicon path for our app.
 	Favicon = "favicon.ico"
 )
@@ -117,7 +117,7 @@ func (b *Bootstrapper) Configure(cs ...Configurator) {
 //
 // Returns itself.
 func (b *Bootstrapper) Bootstrap() *Bootstrapper {
-	b.SetupViews("./webapp/WEB-INF/jsp")
+	b.SetupViews("./WEB-INF/jsp")
 	b.SetupSessions(24*time.Hour,
 		[]byte("the-big-and-secret-fash-key-here"),
 		[]byte("lot-secret-of-characters-big-too"),

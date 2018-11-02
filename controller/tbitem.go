@@ -24,3 +24,9 @@ func (c *IndexController) GetBy(id int64) {
 	utils.Json(c.Ctx, data)
 
 }
+func (c *IndexController) GetList() {
+	_ := c.Ctx.GetList("id")
+}
+func (c *IndexController) GetSeve() {
+	_ := c.Ctx.GetInt64("page")
+}
