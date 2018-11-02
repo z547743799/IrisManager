@@ -2,17 +2,16 @@ package db
 
 import (
 	"fmt"
+	"github.com/go-ini/ini"
+	_ "github.com/go-sql-driver/mysql"
 	"log"
 	"os"
 	"time"
-
-	"github.com/go-ini/ini" //
-	_ "github.com/go-sql-driver/mysql"
-	"github.com/xormplus/xorm"
+	"github.com/go-xorm/xorm"
 )
 
 // X 全局DB
-var x *xorm.Engine
+var X *xorm.Engine
 
 func init() {
 	var err error
@@ -27,7 +26,7 @@ func init() {
 	url := cfg.Section("mysql").Key("url").Value()
 
 	source := fmt.Sprintf("%s:%s@%s", username, password, url)
-	x, err = xorm.NewEngine("mysql", source)
+	X, err = xorm.NewEngine("mysql", source)
 
 	// 30minute ping db to keep connection
 	timer := time.NewTicker(time.Minute * 30)
@@ -38,6 +37,6 @@ func init() {
 				log.Fatalf("db connect error: %#v\n", err.Error())
 			}
 		}
-	}(x)
+	}(X)
 	// x.ShowSQL(true)
 }

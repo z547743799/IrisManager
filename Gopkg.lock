@@ -11,30 +11,6 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:8e91b80da6d170d8350e3dcbd275237846a3f6e6a4236fcc35e9cb06dd08db1c"
-  name = "github.com/Chronokeeper/anyxml"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "54457d8e98c60cb91f18947facfa991ce3ea2ba3"
-
-[[projects]]
-  branch = "master"
-  digest = "1:d4bdf20b93b78346d40681c66ee5133839780911140b70ef553f117b2a963cb7"
-  name = "github.com/CloudyKit/fastprinter"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "74b38d55f37af5d6c05ca11147d616b613a3420e"
-
-[[projects]]
-  digest = "1:5803f73e8574ed21d2d746b4abe020acea49e64838dcc97c8ae76e3b93f36964"
-  name = "github.com/CloudyKit/jet"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "2b064536b25ab0e9c54245f9e2cc5bd4766033fe"
-  version = "v2.1.2"
-
-[[projects]]
-  branch = "master"
   digest = "1:164a36ea7dd8adbbe439458aeb3f55aeb1e18461be220ebab4937cec96fb1a6a"
   name = "github.com/Joker/jade"
   packages = ["."]
@@ -50,27 +26,6 @@
   revision = "b9777dc9f9cc3f3e426a01d218ddd6d52153f907"
 
 [[projects]]
-  digest = "1:14e51285a9e05c095d6bf6b9c394560119baff56606d648f46a395d311352498"
-  name = "github.com/agrison/go-tablib"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "aa8e7a088a682383d164585494e04f135e1212a5"
-  version = "v1.0"
-
-[[projects]]
-  branch = "master"
-  digest = "1:8c4a31aa0517f0723c0fa23fbe545d21f3e5e2743de94a912c9e5eb1f1d80694"
-  name = "github.com/angao/gin-xorm-admin"
-  packages = [
-    "db",
-    "models",
-    "router/multitemplate",
-    "utils",
-  ]
-  pruneopts = "UT"
-  revision = "56d23753ba6ec0f7aadbc0a8fc83f6ce71eae14b"
-
-[[projects]]
   branch = "master"
   digest = "1:8c99bae8191c18fc5a2ba4cc0ab7d2d3d669dfb892e32561e867418ecc25bb05"
   name = "github.com/aymerick/raymond"
@@ -82,22 +37,6 @@
   ]
   pruneopts = "UT"
   revision = "b565731e1464263de0bda75f2e45d97b54b60110"
-
-[[projects]]
-  digest = "1:6bf2ee5be0e5b6cf8fb2a4f6710cadd5737d0dd3a75798a6564634747535ca93"
-  name = "github.com/bndr/gotabulate"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "94ff52dbe671866d4f5cd3463ecdad8ec550e578"
-  version = "v1.1.2"
-
-[[projects]]
-  digest = "1:8e18047715934056ed06c61d4d512ffd80787671d95bb1808cebb56adac56d34"
-  name = "github.com/clbanning/mxj"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "79cfe7d36986ce108bd1e2c1d0a2a85c895237a2"
-  version = "v1.8.3"
 
 [[projects]]
   branch = "master"
@@ -127,35 +66,6 @@
   revision = "24195e6d38b06020d7a92c7b11960cf2e7cad2f2"
 
 [[projects]]
-  digest = "1:abeb38ade3f32a92943e5be54f55ed6d6e3b6602761d74b4aab4c9dd45c18abd"
-  name = "github.com/fsnotify/fsnotify"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "c2828203cd70a50dcccfb2761f8b1f8ceef9a8e9"
-  version = "v1.4.7"
-
-[[projects]]
-  branch = "master"
-  digest = "1:36fe9527deed01d2a317617e59304eb2c4ce9f8a24115bcc5c2e37b3aee5bae4"
-  name = "github.com/gin-contrib/sse"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae"
-
-[[projects]]
-  digest = "1:d5083934eb25e45d17f72ffa86cae3814f4a9d6c073c4f16b64147169b245606"
-  name = "github.com/gin-gonic/gin"
-  packages = [
-    ".",
-    "binding",
-    "json",
-    "render",
-  ]
-  pruneopts = "UT"
-  revision = "b869fe1415e4b9eb52f247441830d502aece2d4d"
-  version = "v1.3.0"
-
-[[projects]]
   digest = "1:15e27372d379b45b18ac917b9dafc45c45485239490ece18cca97a12f9591146"
   name = "github.com/go-ini/ini"
   packages = ["."]
@@ -180,12 +90,36 @@
   version = "v0.3.2"
 
 [[projects]]
-  digest = "1:97df918963298c287643883209a2c3f642e6593379f97ab400c2a2e219ab647d"
-  name = "github.com/golang/protobuf"
-  packages = ["proto"]
+  digest = "1:ec14b8c3b10e27599d7053a97bd28ef36e59cc4247f83b474bca43aaa971eab9"
+  name = "github.com/go-xorm/core"
+  packages = ["."]
   pruneopts = "UT"
-  revision = "aa810b61a9c79d51363740d207bb46cf8e620ed5"
-  version = "v1.2.0"
+  revision = "c10e21e7e1cec20e09398f2dfae385e58c8df555"
+  version = "v0.6.0"
+
+[[projects]]
+  digest = "1:4f01359acf1d4bc0aade06dcfca6f7687516f54fbf70b467fe90057c614647f5"
+  name = "github.com/go-xorm/xorm"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "1f39c590c64924f358c0d89016ac9b2bb84e9125"
+  version = "v0.7.1"
+
+[[projects]]
+  digest = "1:e72d1ebb8d395cf9f346fd9cbc652e5ae222dd85e0ac842dc57f175abed6d195"
+  name = "github.com/gorilla/securecookie"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "e59506cc896acb7f7bf732d4fdf5e25f7ccd8983"
+  version = "v1.1.1"
+
+[[projects]]
+  digest = "1:7b5c6e2eeaa9ae5907c391a91c132abfd5c9e8a784a341b5625e750c67e6825d"
+  name = "github.com/gorilla/websocket"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "66b9c49e59c6c48f0ffce28c2d8b8a5678502c6d"
+  version = "v1.4.0"
 
 [[projects]]
   branch = "master"
@@ -228,8 +162,7 @@
   revision = "03be101463868edc5a81f094fc68a5f6c1b5503a"
 
 [[projects]]
-  branch = "master"
-  digest = "1:0fcb3db7baa8f76fcf9081f01fe485b3931de7a600feb0ac8920336c1f344849"
+  digest = "1:977af9d843f24ef0318c88fc2b231a0c174b787dc70d128a05a7139f4c5486fa"
   name = "github.com/kataras/iris"
   packages = [
     ".",
@@ -247,18 +180,25 @@
     "core/memstore",
     "core/netutil",
     "core/router",
+    "hero",
+    "hero/di",
     "macro",
     "macro/handler",
     "macro/interpreter/ast",
     "macro/interpreter/lexer",
     "macro/interpreter/parser",
     "macro/interpreter/token",
+    "middleware/basicauth",
     "middleware/logger",
     "middleware/recover",
+    "mvc",
+    "sessions",
     "view",
+    "websocket",
   ]
   pruneopts = "UT"
-  revision = "8a34743b0002e1ee600b3b387ec1e9a496e0ddde"
+  revision = "15bb55d85eac378bbe0c98c10ffea938cc05fe4d"
+  version = "v11.0.2"
 
 [[projects]]
   branch = "master"
@@ -289,14 +229,6 @@
   pruneopts = "UT"
   revision = "ae7887de9fa5d2db4eaa8174a7eff2c1ac00f2da"
   version = "v1.1"
-
-[[projects]]
-  digest = "1:0981502f9816113c9c8c4ac301583841855c8cf4da8c72f696b3ebedf6d0e4e5"
-  name = "github.com/mattn/go-isatty"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c"
-  version = "v0.0.4"
 
 [[projects]]
   branch = "master"
@@ -339,52 +271,22 @@
   revision = "86672fcb3f950f35f2e675df2240550f2a50762f"
 
 [[projects]]
-  digest = "1:e60f2f1cd2e8dfdea48c2440c303d103266e754ab1d8b75796a4e4caddb7a68c"
-  name = "github.com/tealeg/xlsx"
+  branch = "master"
+  digest = "1:f52b91ab1b58aa5217d6094865dda519f75296c3884380526cd127bc19f02461"
+  name = "github.com/valyala/bytebufferpool"
   packages = ["."]
   pruneopts = "UT"
-  revision = "8be35264fa75a1bbe954ce51eba04f273e2c59e5"
-  version = "v1.0.3"
-
-[[projects]]
-  digest = "1:03aa6e485e528acb119fb32901cf99582c380225fc7d5a02758e08b180cb56c3"
-  name = "github.com/ugorji/go"
-  packages = ["codec"]
-  pruneopts = "UT"
-  revision = "b4c50a2b199d93b13dc15e78929cfb23bfdf21ab"
-  version = "v1.1.1"
+  revision = "cdfbe9377474227bb42120c1e22fd4433e7f69bf"
 
 [[projects]]
   branch = "master"
-  digest = "1:15d00e9a8e3c99576c04aca3cf6c52d644931b5410ad667d061e37f48b853d4a"
-  name = "github.com/xormplus/core"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "6bfce2eb88670787bb30dbf9014973f31832a3d9"
-
-[[projects]]
-  branch = "master"
-  digest = "1:e2a31eb959dcd86e4ca74db6b84774a74647cb6061185a7969b643af6d5af0b7"
-  name = "github.com/xormplus/xorm"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "89424728a94510c82e573bfce29d535da4403d67"
-
-[[projects]]
-  branch = "master"
-  digest = "1:e2a31eb959dcd86e4ca74db6b84774a74647cb6061185a7969b643af6d5af0b7"
-  name = "github.com/xormplus/xorm.git"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "89424728a94510c82e573bfce29d535da4403d67"
-
-[[projects]]
-  branch = "master"
-  digest = "1:674a2405f77863f4f362e3e45078fd9caa647dc1c0e8b022e3b9dc1ae89fbc8f"
+  digest = "1:029735d9bbbf0517bd734078814d9278c7d2b45096286b775cc4bb7c62ad13c5"
   name = "golang.org/x/crypto"
   packages = [
     "acme",
     "acme/autocert",
+    "bcrypt",
+    "blowfish",
   ]
   pruneopts = "UT"
   revision = "45a5f77698d342a8c2ef8423abdf0ba6880b008a"
@@ -442,22 +344,6 @@
   version = "v1.2.0"
 
 [[projects]]
-  digest = "1:434aab943cc1c082c9df36bd4b1f107d9ef4af930d2ce13d3f2eb008df9196f0"
-  name = "gopkg.in/flosch/pongo2.v3"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "5e81b817a0c48c1c57cdf1a9056cf76bdee02ca9"
-  version = "v3.0"
-
-[[projects]]
-  digest = "1:cbc72c4c4886a918d6ab4b95e347ffe259846260f99ebdd8a198c2331cf2b2e9"
-  name = "gopkg.in/go-playground/validator.v8"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "5f1438d3fca68893a817e4a66806cea46a9e4ebf"
-  version = "v8.18.2"
-
-[[projects]]
   branch = "v2"
   digest = "1:2ee0f15eb0fb04f918db7c2dcf39745f40d69f798ef171610a730e8a56aaa4fd"
   name = "gopkg.in/russross/blackfriday.v2"
@@ -477,15 +363,18 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/angao/gin-xorm-admin/db",
-    "github.com/angao/gin-xorm-admin/models",
-    "github.com/gin-gonic/gin",
     "github.com/go-ini/ini",
     "github.com/go-sql-driver/mysql",
+    "github.com/go-xorm/xorm",
+    "github.com/gorilla/securecookie",
     "github.com/kataras/iris",
+    "github.com/kataras/iris/middleware/basicauth",
+    "github.com/kataras/iris/middleware/logger",
     "github.com/kataras/iris/middleware/recover",
-    "github.com/xormplus/xorm",
-    "github.com/xormplus/xorm.git",
+    "github.com/kataras/iris/mvc",
+    "github.com/kataras/iris/sessions",
+    "github.com/kataras/iris/websocket",
+    "golang.org/x/crypto/bcrypt",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

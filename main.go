@@ -1,22 +1,18 @@
 package main
 
 import (
-	R "IrisManager/controller"
-
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/middleware/recover"
+	"IrisManager/bootstrap"
+	"IrisManager/webapp/routes"
 )
 
+func newApp() *bootstrap.Bootstrapper {
+	app := bootstrap.New("Superstar database", "一凡Sir")
+	app.Bootstrap()
+	app.Configure(routes.Configure)
+	return app
+}
+
 func main() {
-	//var port string
-	//flag.StringVar(&port, "port", "3001", "service listening at, default 3000")
-	//flag.StringVar(&mode, "mode", "debug", "service running mode, default debug mode")
-
-	//	flag.Parse()
-	app := iris.New()
-	app.Use(recover.New())
-
-	app.Get("/:id", R.List)
-
-	app.Run(iris.Addr(":3000"))
+	app := newApp()
+	app.Listen(":8080")
 }
