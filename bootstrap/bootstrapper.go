@@ -43,7 +43,7 @@ func New(appName, appOwner string, cfgs ...Configurator) *Bootstrapper {
 
 // SetupViews loads the templates.
 func (b *Bootstrapper) SetupViews(viewsDir string) {
-	htmlEngine := iris.HTML(viewsDir, ".html").Layout("index.html")
+	htmlEngine := iris.HTML(viewsDir, ".html")
 	// 每次重新加载模版（线上关闭它）
 	htmlEngine.Reload(false)
 	// 给模版内置各种定制的方法
@@ -95,13 +95,13 @@ func (b *Bootstrapper) SetupErrorHandlers() {
 
 		ctx.ViewData("Err", err)
 		ctx.ViewData("Title", "Error")
-		ctx.View("shared/error.html")
+		ctx.View("login.html")
 	})
 }
 
 const (
-	// StaticAssets is the root directory for public assets like images, css, js.
-	StaticAssets = "./"
+	// Static Assets is the root directory for public assets like images, css, js.
+	StaticAssets = "./webapp/"
 	// Favicon is the relative 9to the "StaticAssets") favicon path for our app.
 	Favicon = "favicon.ico"
 )
@@ -117,7 +117,7 @@ func (b *Bootstrapper) Configure(cs ...Configurator) {
 //
 // Returns itself.
 func (b *Bootstrapper) Bootstrap() *Bootstrapper {
-	b.SetupViews("./WEB-INF/jsp")
+	b.SetupViews("./webapp/WEB-INF/jsp")
 	b.SetupSessions(24*time.Hour,
 		[]byte("the-big-and-secret-fash-key-here"),
 		[]byte("lot-secret-of-characters-big-too"),
@@ -126,7 +126,7 @@ func (b *Bootstrapper) Bootstrap() *Bootstrapper {
 
 	// static files
 	b.Favicon(StaticAssets + Favicon)
-	b.StaticWeb(StaticAssets[1:len(StaticAssets)-1], StaticAssets)
+	b.StaticWeb(StaticAssets[1:len(StaticAssets)], StaticAssets)
 
 	// middleware, after static files
 	b.Use(recover.New())

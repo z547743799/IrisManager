@@ -14,19 +14,16 @@ import (
 //var DeptDao db.TbUser
 
 // L.JSON(c.Writer, http.StatusOK, depts)
-type IndexController struct {
+type ItemController struct {
 	Ctx     iris.Context
 	Service service.TbItemService
 }
 
-func (c *IndexController) GetBy(id int64) {
+func (c *ItemController) GetBy(id int64) {
 	data := c.Service.Get(id)
 	utils.Json(c.Ctx, data)
-
 }
-func (c *IndexController) GetList() {
-	_ := c.Ctx.GetList("id")
+func (c *ItemController) GetList() {
 }
-func (c *IndexController) GetSeve() {
-	_ := c.Ctx.GetInt64("page")
+func (c *ItemController) GetSeve() {
 }

@@ -12,9 +12,12 @@ import (
 func Configure(b *bootstrap.Bootstrapper) {
 	superstarService := service.NewTbItemService()
 
-	index := mvc.New(b.Party("/item"))
-	index.Register(superstarService)
-	index.Handle(new(controller.IndexController))
+	item := mvc.New(b.Party("/item"))
+	item.Register(superstarService)
+	item.Handle(new(controller.ItemController))
+
+	index := mvc.New(b.Party("/"))
+	index.Handle(new(controller.PageController))
 
 	//admin := mvc.New(b.Party("/admin"))
 	//admin.Router.Use(middleware.BasicAuth)
