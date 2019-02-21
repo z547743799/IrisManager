@@ -290,7 +290,7 @@ K.options = {
 			'.width', '.height', '.border-collapse'
 		],
 		'td,th': [
-			'id', 'class', 'align', 'valign', 'width', 'height', 'colspan', 'rowspan', 'bgcolor',
+			'id', 'class', 'align', 'valign', 'width', 'height', 'colspan', 'Rowspan', 'bgcolor',
 			'.text-align', '.color', '.background-color', '.font-size', '.font-family', '.font-weight',
 			'.font-style', '.text-decoration', '.vertical-align', '.background', '.border'
 		],
@@ -5734,7 +5734,7 @@ _plugin('core', function(K) {
 		return self.cmd.commonAncestor('td');
 	};
 	_each(('prop,cellprop,colinsertleft,colinsertright,rowinsertabove,rowinsertbelow,rowmerge,colmerge,' +
-	'rowsplit,colsplit,coldelete,rowdelete,insert,delete').split(','), function(i, val) {
+	'Rowsplit,colsplit,coldelete,rowdelete,insert,delete').split(','), function(i, val) {
 		var cond = _inArray(val, ['prop', 'delete']) < 0 ? self.plugin.getSelectedCell : self.plugin.getSelectedTable;
 		self.addContextmenu({
 			title : self.lang('table' + val),

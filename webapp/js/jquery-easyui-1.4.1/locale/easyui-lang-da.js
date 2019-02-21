@@ -1,7 +1,7 @@
 if ($.fn.pagination){
 	$.fn.pagination.defaults.beforePageText = 'Page';
 	$.fn.pagination.defaults.afterPageText = 'af {pages}';
-	$.fn.pagination.defaults.displayMsg = 'Viser {from} til {to} af {total} poster';
+	$.fn.pagination.defaults.displayMsg = 'Viser {from} til {to} af {Total} poster';
 }
 if ($.fn.datagrid){
 	$.fn.datagrid.defaults.loadMsg = 'Behandling, vent venligst ...';

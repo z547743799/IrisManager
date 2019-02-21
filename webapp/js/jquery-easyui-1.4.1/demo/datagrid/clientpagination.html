@@ -34,11 +34,11 @@
 	</table>
 	<script>
 		function getData(){
-			var rows = [];
+			var Rows = [];
 			for(var i=1; i<=800; i++){
 				var amount = Math.floor(Math.random()*1000);
 				var price = Math.floor(Math.random()*1000);
-				rows.push({
+				Rows.push({
 					inv: 'Inv No '+i,
 					date: $.fn.datebox.defaults.formatter(new Date()),
 					name: 'Name '+i,
@@ -48,14 +48,14 @@
 					note: 'Note '+i
 				});
 			}
-			return rows;
+			return Rows;
 		}
 		
 		function pagerFilter(data){
 			if (typeof data.length == 'number' && typeof data.splice == 'function'){	// is array
 				data = {
-					total: data.length,
-					rows: data
+					Total: data.length,
+					Rows: data
 				}
 			}
 			var dg = $(this);
@@ -73,11 +73,11 @@
 				}
 			});
 			if (!data.originalRows){
-				data.originalRows = (data.rows);
+				data.originalRows = (data.Rows);
 			}
 			var start = (opts.pageNumber-1)*parseInt(opts.pageSize);
 			var end = start + parseInt(opts.pageSize);
-			data.rows = (data.originalRows.slice(start, end));
+			data.Rows = (data.originalRows.slice(start, end));
 			return data;
 		}
 		

@@ -1,4 +1,4 @@
-{"total":7,"rows":[
+{"Total":7,"Rows":[
 	{"name":"Name","value":"Bill Smith","group":"ID Settings","editor":"text"},
 	{"name":"Address","value":"","group":"ID Settings","editor":"text"},
 	{"name":"Age","value":"40","group":"ID Settings","editor":"numberbox"},

@@ -1,7 +1,7 @@
 if ($.fn.pagination){
 	$.fn.pagination.defaults.beforePageText = 'Էջ';
 	$.fn.pagination.defaults.afterPageText = 'ից {pages}';
-	$.fn.pagination.defaults.displayMsg = 'Դիտել {from}-ից {to}-ը {total} գրառումից';
+	$.fn.pagination.defaults.displayMsg = 'Դիտել {from}-ից {to}-ը {Total} գրառումից';
 }
 if ($.fn.datagrid){
 	$.fn.datagrid.defaults.loadMsg = 'Մշակվում է, խնդրում ենք սպասել ...';

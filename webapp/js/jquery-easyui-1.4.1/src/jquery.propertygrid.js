@@ -142,7 +142,7 @@
 			table.push('<td style="border:0;">');
 			if (!frozen){
 				table.push('<span class="datagrid-group-title">');
-				table.push(opts.groupFormatter.call(target, group.value, group.rows));
+				table.push(opts.groupFormatter.call(target, group.value, group.Rows));
 				table.push('</span>');
 			}
 			table.push('</td>');
@@ -152,8 +152,8 @@
 			
 			table.push('<table class="datagrid-btable" cellspacing="0" cellpadding="0" border="0"><tbody>');
 			var index = group.startIndex;
-			for(var j=0; j<group.rows.length; j++) {
-				var css = opts.rowStyler ? opts.rowStyler.call(target, index, group.rows[j]) : '';
+			for(var j=0; j<group.Rows.length; j++) {
+				var css = opts.rowStyler ? opts.rowStyler.call(target, index, group.Rows[j]) : '';
 				var classValue = '';
 				var styleValue = '';
 				if (typeof css == 'string'){
@@ -167,7 +167,7 @@
 				var style = styleValue ? 'style="' + styleValue + '"' : '';
 				var rowId = state.rowIdPrefix + '-' + (frozen?1:2) + '-' + index;
 				table.push('<tr id="' + rowId + '" datagrid-row-index="' + index + '" ' + cls + ' ' + style + '>');
-				table.push(this.renderRow.call(this, target, fields, frozen, index, group.rows[j]));
+				table.push(this.renderRow.call(this, target, fields, frozen, index, group.Rows[j]));
 				table.push('</tr>');
 				index++;
 			}
@@ -197,24 +197,24 @@
 			});
 		},
 		
-		onBeforeRender: function(target, rows){
+		onBeforeRender: function(target, Rows){
 			var state = $.data(target, 'datagrid');
 			var opts = state.options;
 			
 			initCss();
 			
 			var groups = [];
-			for(var i=0; i<rows.length; i++){
-				var row = rows[i];
+			for(var i=0; i<Rows.length; i++){
+				var row = Rows[i];
 				var group = getGroup(row[opts.groupField]);
 				if (!group){
 					group = {
 						value: row[opts.groupField],
-						rows: [row]
+						Rows: [row]
 					};
 					groups.push(group);
 				} else {
-					group.rows.push(row);
+					group.Rows.push(row);
 				}
 			}
 			
@@ -223,11 +223,11 @@
 			for(var i=0; i<groups.length; i++){
 				var group = groups[i];
 				group.startIndex = index;
-				index += group.rows.length;
-				newRows = newRows.concat(group.rows);
+				index += group.Rows.length;
+				newRows = newRows.concat(group.Rows);
 			}
 			
-			state.data.rows = newRows;
+			state.data.Rows = newRows;
 			this.groups = groups;
 			
 			var that = this;
@@ -290,7 +290,7 @@
 			var dc = state.dc;
 			var group = this.groups[groupIndex];
 			var span = dc.body2.children('div.datagrid-group[group-index=' + groupIndex + ']').find('span.datagrid-group-title');
-			span.html(opts.groupFormatter.call(target, group.value, group.rows));
+			span.html(opts.groupFormatter.call(target, group.value, group.Rows));
 		},
 		
 		insertRow: function(target, index, row){
@@ -309,31 +309,31 @@
 			}
 			if (group){
 				if (index == undefined || index == null){
-					index = state.data.rows.length;
+					index = state.data.Rows.length;
 				}
 				if (index < group.startIndex){
 					index = group.startIndex;
-				} else if (index > group.startIndex + group.rows.length){
-					index = group.startIndex + group.rows.length;
+				} else if (index > group.startIndex + group.Rows.length){
+					index = group.startIndex + group.Rows.length;
 				}
 				$.fn.datagrid.defaults.view.insertRow.call(this, target, index, row);
 				
-				if (index >= group.startIndex + group.rows.length){
+				if (index >= group.startIndex + group.Rows.length){
 					_moveTr(index, true);
 					_moveTr(index, false);
 				}
-				group.rows.splice(index - group.startIndex, 0, row);
+				group.Rows.splice(index - group.startIndex, 0, row);
 			} else {
 				group = {
 					value: row[opts.groupField],
-					rows: [row],
-					startIndex: state.data.rows.length
+					Rows: [row],
+					startIndex: state.data.Rows.length
 				}
 				groupIndex = this.groups.length;
 				dc.body1.append(this.renderGroup.call(this, target, groupIndex, group, true));
 				dc.body2.append(this.renderGroup.call(this, target, groupIndex, group, false));
 				this.groups.push(group);
-				state.data.rows.push(row);
+				state.data.Rows.push(row);
 			}
 			
 			this.refreshGroupTitle(target, groupIndex);
@@ -366,8 +366,8 @@
 			$.fn.datagrid.defaults.view.deleteRow.call(this, target, index);
 			
 			var group = this.groups[groupIndex];
-			if (group.rows.length > 1){
-				group.rows.splice(index-group.startIndex, 1);
+			if (group.Rows.length > 1){
+				group.Rows.splice(index-group.startIndex, 1);
 				this.refreshGroupTitle(target, groupIndex);
 			} else {
 				body.children('div.datagrid-group[group-index='+groupIndex+']').remove();
@@ -381,7 +381,7 @@
 			for(var i=0; i<this.groups.length; i++){
 				var group = this.groups[i];
 				group.startIndex = index;
-				index += group.rows.length;
+				index += group.Rows.length;
 			}
 		}
 	});
@@ -404,6 +404,6 @@
 		showGroup:false,
 		groupView:groupview,
 		groupField:'group',
-		groupFormatter:function(fvalue,rows){return fvalue}
+		groupFormatter:function(fvalue,Rows){return fvalue}
 	});
 })(jQuery);

@@ -7,6 +7,6 @@ type TbOrderItem struct {
 	Num      int    `json:"num" xorm:"comment('商品购买数量') INT(10)"`
 	Title    string `json:"title" xorm:"comment('商品标题') VARCHAR(200)"`
 	Price    int64  `json:"price" xorm:"comment('商品单价') BIGINT(50)"`
-	TotalFee int64  `json:"total_fee" xorm:"comment('商品总金额') BIGINT(50)"`
+	TotalFee int64  `json:"Total_fee" xorm:"comment('商品总金额') BIGINT(50)"`
 	PicPath  string `json:"pic_path" xorm:"comment('商品图片地址') VARCHAR(200)"`
 }

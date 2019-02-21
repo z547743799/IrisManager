@@ -13,8 +13,8 @@ KindEditor.plugin('emoticons', function(K) {
 		allowPreview = self.allowPreviewEmoticons === undefined ? true : self.allowPreviewEmoticons,
 		currentPageNum = 1;
 	self.clickToolbar(name, function() {
-		var rows = 5, cols = 9, total = 135, startNum = 0,
-			cells = rows * cols, pages = Math.ceil(total / cells),
+		var Rows = 5, cols = 9, Total = 135, startNum = 0,
+			cells = Rows * cols, pages = Math.ceil(Total / cells),
 			colsHalf = Math.floor(cols / 2),
 			wrapperDiv = K('<div class="ke-plugin-emoticons"></div>'),
 			elements = [],
@@ -75,7 +75,7 @@ KindEditor.plugin('emoticons', function(K) {
 			table.cellSpacing = 0;
 			table.border = 0;
 			var num = (pageNum - 1) * cells + startNum;
-			for (var i = 0; i < rows; i++) {
+			for (var i = 0; i < Rows; i++) {
 				var row = table.insertRow(i);
 				for (var j = 0; j < cols; j++) {
 					var cell = K(row.insertCell(j));

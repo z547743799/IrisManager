@@ -162,10 +162,10 @@
   border-width: 0 0 1px;
 }
 .accordion-collapse {
-  background: url('images/accordion_arrows.png') no-repeat 0 0;
+  background: url('images/accordion_arRows.png') no-repeat 0 0;
 }
 .accordion-expand {
-  background: url('images/accordion_arrows.png') no-repeat -16px 0;
+  background: url('images/accordion_arRows.png') no-repeat -16px 0;
 }
 .accordion {
   background: #ffffff;
@@ -739,16 +739,16 @@
   z-index: 4;
 }
 .layout-button-up {
-  background: url('images/layout_arrows.png') no-repeat -16px -16px;
+  background: url('images/layout_arRows.png') no-repeat -16px -16px;
 }
 .layout-button-down {
-  background: url('images/layout_arrows.png') no-repeat -16px 0;
+  background: url('images/layout_arRows.png') no-repeat -16px 0;
 }
 .layout-button-left {
-  background: url('images/layout_arrows.png') no-repeat 0 0;
+  background: url('images/layout_arRows.png') no-repeat 0 0;
 }
 .layout-button-right {
-  background: url('images/layout_arrows.png') no-repeat 0 -16px;
+  background: url('images/layout_arRows.png') no-repeat 0 -16px;
 }
 .layout-split-proxy-h,
 .layout-split-proxy-v {
@@ -1552,19 +1552,19 @@
 }
 .calendar-prevmonth {
   left: 20px;
-  background: url('images/calendar_arrows.png') no-repeat -18px -2px;
+  background: url('images/calendar_arRows.png') no-repeat -18px -2px;
 }
 .calendar-nextmonth {
   right: 20px;
-  background: url('images/calendar_arrows.png') no-repeat -34px -2px;
+  background: url('images/calendar_arRows.png') no-repeat -34px -2px;
 }
 .calendar-prevyear {
   left: 3px;
-  background: url('images/calendar_arrows.png') no-repeat -1px -2px;
+  background: url('images/calendar_arRows.png') no-repeat -1px -2px;
 }
 .calendar-nextyear {
   right: 3px;
-  background: url('images/calendar_arrows.png') no-repeat -49px -2px;
+  background: url('images/calendar_arRows.png') no-repeat -49px -2px;
 }
 .calendar-body {
   position: relative;
@@ -1628,11 +1628,11 @@
 }
 .calendar-menu-prev {
   margin-right: 10px;
-  background: url('images/calendar_arrows.png') no-repeat 2px 2px;
+  background: url('images/calendar_arRows.png') no-repeat 2px 2px;
 }
 .calendar-menu-next {
   margin-left: 10px;
-  background: url('images/calendar_arrows.png') no-repeat -45px 2px;
+  background: url('images/calendar_arRows.png') no-repeat -45px 2px;
 }
 .calendar-menu-month {
   text-align: center;
@@ -1799,10 +1799,10 @@
   filter: alpha(opacity=60);
 }
 .spinner-arrow-up {
-  background: url('images/spinner_arrows.png') no-repeat 1px center;
+  background: url('images/spinner_arRows.png') no-repeat 1px center;
 }
 .spinner-arrow-down {
-  background: url('images/spinner_arrows.png') no-repeat -15px center;
+  background: url('images/spinner_arRows.png') no-repeat -15px center;
 }
 .spinner {
   border-color: #95B8E7;
@@ -2107,7 +2107,7 @@
   filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=2,MakeShadow=false,ShadowOpacity=0.2);
 }
 .menu-rightarrow {
-  background: url('images/menu_arrows.png') no-repeat -32px center;
+  background: url('images/menu_arRows.png') no-repeat -32px center;
 }
 .menu-line {
   border-left: 1px solid #ccc;
@@ -2225,7 +2225,7 @@
 }
 .m-btn-downarrow,
 .s-btn-downarrow {
-  background: url('images/menu_arrows.png') no-repeat 0 center;
+  background: url('images/menu_arRows.png') no-repeat 0 center;
 }
 .m-btn-plain-active,
 .s-btn-plain-active {

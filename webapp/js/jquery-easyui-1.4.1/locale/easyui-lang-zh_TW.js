@@ -1,7 +1,7 @@
 if ($.fn.pagination){
 	$.fn.pagination.defaults.beforePageText = '第';
 	$.fn.pagination.defaults.afterPageText = '共{pages}頁';
-	$.fn.pagination.defaults.displayMsg = '顯示{from}到{to},共{total}記錄';
+	$.fn.pagination.defaults.displayMsg = '顯示{from}到{to},共{Total}記錄';
 }
 if ($.fn.datagrid){
 	$.fn.datagrid.defaults.loadMsg = '正在處理，請稍待。。。';

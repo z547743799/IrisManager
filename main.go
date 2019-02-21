@@ -1,12 +1,12 @@
 package main
 
 import (
-	"IrisManager/bootstrap"
-	"IrisManager/webapp/routes"
+	"gitlab.com/z547743799/irismanager/bootstrap"
+	"gitlab.com/z547743799/irismanager/webapp/routes"
 )
 
 func newApp() *bootstrap.Bootstrapper {
-	app := bootstrap.New("Superstar database", "一凡Sir")
+	app := bootstrap.New("Superstar database", "極")
 	app.Bootstrap()
 	app.Configure(routes.Configure)
 	return app

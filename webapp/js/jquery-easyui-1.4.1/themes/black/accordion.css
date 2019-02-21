@@ -20,10 +20,10 @@
   border-width: 0 0 1px;
 }
 .accordion-collapse {
-  background: url('images/accordion_arrows.png') no-repeat 0 0;
+  background: url('images/accordion_arRows.png') no-repeat 0 0;
 }
 .accordion-expand {
-  background: url('images/accordion_arrows.png') no-repeat -16px 0;
+  background: url('images/accordion_arRows.png') no-repeat -16px 0;
 }
 .accordion {
   background: #666;

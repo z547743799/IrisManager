@@ -75,7 +75,7 @@
   filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=2,MakeShadow=false,ShadowOpacity=0.2);
 }
 .menu-rightarrow {
-  background: url('images/menu_arrows.png') no-repeat -32px center;
+  background: url('images/menu_arRows.png') no-repeat -32px center;
 }
 .menu-line {
   border-left: 1px solid #ccc;

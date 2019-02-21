@@ -1,7 +1,7 @@
 if ($.fn.pagination){
 	$.fn.pagination.defaults.beforePageText = 'صفحة';
 	$.fn.pagination.defaults.afterPageText = 'من {pages}';
-	$.fn.pagination.defaults.displayMsg = 'عرض {from} إلى {to} من {total} عنصر';
+	$.fn.pagination.defaults.displayMsg = 'عرض {from} إلى {to} من {Total} عنصر';
 }
 if ($.fn.datagrid){
 	$.fn.datagrid.defaults.loadMsg = 'معالجة, الرجاء الإنتظار ...';

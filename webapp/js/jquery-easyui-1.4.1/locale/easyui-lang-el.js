@@ -1,7 +1,7 @@
 if ($.fn.pagination){
 	$.fn.pagination.defaults.beforePageText = 'Σελίδα';
 	$.fn.pagination.defaults.afterPageText = 'από {pages}';
-	$.fn.pagination.defaults.displayMsg = 'Εμφάνιση {from} εώς {to} από {total} αντικείμενα';
+	$.fn.pagination.defaults.displayMsg = 'Εμφάνιση {from} εώς {to} από {Total} αντικείμενα';
 }
 if ($.fn.datagrid){
 	$.fn.datagrid.defaults.loadMsg = 'Γίνεται Επεξεργασία, Παρακαλώ Περιμένετε ...';

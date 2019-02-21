@@ -290,7 +290,7 @@ K.options = {
 			'.width', '.height', '.border-collapse'
 		],
 		'td,th': [
-			'id', 'class', 'align', 'valign', 'width', 'height', 'colspan', 'rowspan', 'bgcolor',
+			'id', 'class', 'align', 'valign', 'width', 'height', 'colspan', 'Rowspan', 'bgcolor',
 			'.text-align', '.color', '.background-color', '.font-size', '.font-family', '.font-weight',
 			'.font-style', '.text-decoration', '.vertical-align', '.background', '.border'
 		],
@@ -5734,7 +5734,7 @@ _plugin('core', function(K) {
 		return self.cmd.commonAncestor('td');
 	};
 	_each(('prop,cellprop,colinsertleft,colinsertright,rowinsertabove,rowinsertbelow,rowmerge,colmerge,' +
-	'rowsplit,colsplit,coldelete,rowdelete,insert,delete').split(','), function(i, val) {
+	'Rowsplit,colsplit,coldelete,rowdelete,insert,delete').split(','), function(i, val) {
 		var cond = _inArray(val, ['prop', 'delete']) < 0 ? self.plugin.getSelectedCell : self.plugin.getSelectedTable;
 		self.addContextmenu({
 			title : self.lang('table' + val),
@@ -6045,7 +6045,7 @@ KindEditor.lang({
 	tablerowinsertbelow : '下方插入行',
 	tablerowmerge : '向下合并单元格',
 	tablecolmerge : '向右合并单元格',
-	tablerowsplit : '拆分行',
+	tableRowsplit : '拆分行',
 	tablecolsplit : '拆分列',
 	tablecoldelete : '删除列',
 	tablerowdelete : '删除行',
@@ -6127,7 +6127,7 @@ KindEditor.lang({
 	'insertfile.upload' : '上传',
 	'insertfile.viewServer' : '文件空间',
 	'table.cells' : '单元格数',
-	'table.rows' : '行数',
+	'table.Rows' : '行数',
 	'table.cols' : '列数',
 	'table.size' : '大小',
 	'table.width' : '宽度',
@@ -6408,7 +6408,7 @@ KindEditor.plugin('clearhtml', function(K) {
 			embed : ['src', 'width', 'height', 'type', 'loop', 'autostart', 'quality', '.width', '.height', 'align', 'allowscriptaccess'],
 			img : ['src', 'width', 'height', 'border', 'alt', 'title', '.width', '.height'],
 			table : ['border'],
-			'td,th' : ['rowspan', 'colspan'],
+			'td,th' : ['Rowspan', 'colspan'],
 			'div,hr,br,tbody,tr,p,ol,ul,li,blockquote,h1,h2,h3,h4,h5,h6' : []
 		});
 		self.html(html);
@@ -6493,8 +6493,8 @@ KindEditor.plugin('emoticons', function(K) {
 		allowPreview = self.allowPreviewEmoticons === undefined ? true : self.allowPreviewEmoticons,
 		currentPageNum = 1;
 	self.clickToolbar(name, function() {
-		var rows = 5, cols = 9, total = 135, startNum = 0,
-			cells = rows * cols, pages = Math.ceil(total / cells),
+		var Rows = 5, cols = 9, Total = 135, startNum = 0,
+			cells = Rows * cols, pages = Math.ceil(Total / cells),
 			colsHalf = Math.floor(cols / 2),
 			wrapperDiv = K('<div class="ke-plugin-emoticons"></div>'),
 			elements = [],
@@ -6555,7 +6555,7 @@ KindEditor.plugin('emoticons', function(K) {
 			table.cellSpacing = 0;
 			table.border = 0;
 			var num = (pageNum - 1) * cells + startNum;
-			for (var i = 0; i < rows; i++) {
+			for (var i = 0; i < Rows; i++) {
 				var row = table.insertRow(i);
 				for (var j = 0; j < cols; j++) {
 					var cell = K(row.insertCell(j));
@@ -7862,7 +7862,7 @@ K.extend(KSWFUpload, {
 			'<div class="ke-swfupload">',
 			'<div class="ke-swfupload-top">',
 			'<div class="ke-inline-block ke-swfupload-button">',
-			'<input type="button" value="Browse" />',
+			'<input type="button" value="BRowse" />',
 			'</div>',
 			'<div class="ke-inline-block ke-swfupload-desc">' + options.uploadDesc + '</div>',
 			'<span class="ke-button-common ke-button-outer ke-swfupload-startupload">',
@@ -8347,7 +8347,7 @@ SWFUpload.prototype.loadFlash = function () {
 
 	// Append the container and load the flash
 	tempParent = document.createElement("div");
-	tempParent.innerHTML = this.getFlashHTML();	// Using innerHTML is non-standard but the only sensible way to dynamically add Flash in IE (and maybe other browsers)
+	tempParent.innerHTML = this.getFlashHTML();	// Using innerHTML is non-standard but the only sensible way to dynamically add Flash in IE (and maybe other bRowsers)
 	targetElement.parentNode.replaceChild(tempParent.firstChild, targetElement);
 
 	// Fix IE Flash/Form bug
@@ -8969,7 +8969,7 @@ SWFUpload.prototype.cleanUp = function (movieElement) {
 };
 
 
-/* This is a chance to do something before the browse window opens */
+/* This is a chance to do something before the bRowse window opens */
 SWFUpload.prototype.fileDialogStart = function () {
 	this.queueEvent("file_dialog_start_handler");
 };
@@ -9467,10 +9467,10 @@ KindEditor.plugin('table', function(K) {
 		prop : function(isInsert) {
 			var html = [
 				'<div style="padding:20px;">',
-				//rows, cols
+				//Rows, cols
 				'<div class="ke-dialog-row">',
 				'<label for="keRows" style="width:90px;">' + lang.cells + '</label>',
-				lang.rows + ' <input type="text" id="keRows" class="ke-input-text ke-input-number" name="rows" value="" maxlength="4" /> &nbsp; ',
+				lang.Rows + ' <input type="text" id="keRows" class="ke-input-text ke-input-number" name="Rows" value="" maxlength="4" /> &nbsp; ',
 				lang.cols + ' <input type="text" class="ke-input-text ke-input-number" name="cols" value="" maxlength="4" />',
 				'</div>',
 				//width, height
@@ -9528,7 +9528,7 @@ KindEditor.plugin('table', function(K) {
 				yesBtn : {
 					name : self.lang('yes'),
 					click : function(e) {
-						var rows = rowsBox.val(),
+						var Rows = RowsBox.val(),
 							cols = colsBox.val(),
 							width = widthBox.val(),
 							height = heightBox.val(),
@@ -9540,9 +9540,9 @@ KindEditor.plugin('table', function(K) {
 							border = borderBox.val(),
 							borderColor = K(colorBox[0]).html() || '',
 							bgColor = K(colorBox[1]).html() || '';
-						if (rows == 0 || !/^\d+$/.test(rows)) {
+						if (Rows == 0 || !/^\d+$/.test(Rows)) {
 							alert(self.lang('invalidRows'));
-							rowsBox[0].focus();
+							RowsBox[0].focus();
 							return;
 						}
 						if (cols == 0 || !/^\d+$/.test(cols)) {
@@ -9667,7 +9667,7 @@ KindEditor.plugin('table', function(K) {
 							html += ' bordercolor="' + borderColor + '"';
 						}
 						html += '>';
-						for (var i = 0; i < rows; i++) {
+						for (var i = 0; i < Rows; i++) {
 							html += '<tr>';
 							for (var j = 0; j < cols; j++) {
 								html += '<td>' + (K.IE ? '&nbsp;' : '<br />') + '</td>';
@@ -9685,7 +9685,7 @@ KindEditor.plugin('table', function(K) {
 				}
 			}),
 			div = dialog.div,
-			rowsBox = K('[name="rows"]', div).val(3),
+			RowsBox = K('[name="Rows"]', div).val(3),
 			colsBox = K('[name="cols"]', div).val(2),
 			widthBox = K('[name="width"]', div).val(100),
 			heightBox = K('[name="height"]', div),
@@ -9701,8 +9701,8 @@ KindEditor.plugin('table', function(K) {
 			_setColor(colorBox.eq(0), '#000000');
 			_setColor(colorBox.eq(1), '');
 			// foucs and select
-			rowsBox[0].focus();
-			rowsBox[0].select();
+			RowsBox[0].focus();
+			RowsBox[0].select();
 			var table;
 			if (isInsert) {
 				return;
@@ -9710,9 +9710,9 @@ KindEditor.plugin('table', function(K) {
 			//get selected table node
 			table = self.plugin.getSelectedTable();
 			if (table) {
-				rowsBox.val(table[0].rows.length);
-				colsBox.val(table[0].rows.length > 0 ? table[0].rows[0].cells.length : 0);
-				rowsBox.attr('disabled', true);
+				RowsBox.val(table[0].Rows.length);
+				colsBox.val(table[0].Rows.length > 0 ? table[0].Rows[0].cells.length : 0);
+				RowsBox.attr('disabled', true);
 				colsBox.attr('disabled', true);
 				var match,
 					tableWidth = table[0].style.width || table[0].width,
@@ -9901,10 +9901,10 @@ KindEditor.plugin('table', function(K) {
 				cell = self.plugin.getSelectedCell()[0],
 				index = cell.cellIndex + offset;
 			// 取得第一行的index
-			index += table.rows[0].cells.length - row.cells.length;
+			index += table.Rows[0].cells.length - row.cells.length;
 
-			for (var i = 0, len = table.rows.length; i < len; i++) {
-				var newRow = table.rows[i],
+			for (var i = 0, len = table.Rows.length; i < len; i++) {
+				var newRow = table.Rows[i],
 					newCell = newRow.insertCell(index);
 				newCell.innerHTML = K.IE ? '' : '<br />';
 				// 调整下一行的单元格index
@@ -9942,9 +9942,9 @@ KindEditor.plugin('table', function(K) {
 				}
 				newCell.innerHTML = K.IE ? '' : '<br />';
 			}
-			// 调整rowspan
+			// 调整Rowspan
 			for (var j = rowIndex; j >= 0; j--) {
-				var cells = table.rows[j].cells;
+				var cells = table.Rows[j].cells;
 				if (cells.length > i) {
 					for (var k = cell.cellIndex; k >= 0; k--) {
 						if (cells[k].rowSpan > 1) {
@@ -9970,9 +9970,9 @@ KindEditor.plugin('table', function(K) {
 				cell = self.plugin.getSelectedCell()[0],
 				rowIndex = row.rowIndex, // 当前行的index
 				nextRowIndex = rowIndex + cell.rowSpan, // 下一行的index
-				nextRow = table.rows[nextRowIndex]; // 下一行
+				nextRow = table.Rows[nextRowIndex]; // 下一行
 			// 最后一行不能合并
-			if (table.rows.length <= nextRowIndex) {
+			if (table.Rows.length <= nextRowIndex) {
 				return;
 			}
 			var cellIndex = cell.cellIndex; // 下一行单元格的index
@@ -10002,7 +10002,7 @@ KindEditor.plugin('table', function(K) {
 				return;
 			}
 			var nextCell = row.cells[nextCellIndex];
-			// 左右列的rowspan不一致时不能合并
+			// 左右列的Rowspan不一致时不能合并
 			if (cell.rowSpan !== nextCell.rowSpan) {
 				return;
 			}
@@ -10012,7 +10012,7 @@ KindEditor.plugin('table', function(K) {
 			self.cmd.select();
 			self.addBookmark();
 		},
-		rowsplit : function() {
+		Rowsplit : function() {
 			var table = self.plugin.getSelectedTable()[0],
 				row = self.plugin.getSelectedRow()[0],
 				cell = self.plugin.getSelectedCell()[0],
@@ -10023,7 +10023,7 @@ KindEditor.plugin('table', function(K) {
 			}
 			var cellIndex = _getCellIndex(table, row, cell);
 			for (var i = 1, len = cell.rowSpan; i < len; i++) {
-				var newRow = table.rows[rowIndex + i],
+				var newRow = table.Rows[rowIndex + i],
 					newCell = newRow.insertCell(cellIndex);
 				if (cell.colSpan > 1) {
 					newCell.colSpan = cell.colSpan;
@@ -10063,8 +10063,8 @@ KindEditor.plugin('table', function(K) {
 				row = self.plugin.getSelectedRow()[0],
 				cell = self.plugin.getSelectedCell()[0],
 				index = cell.cellIndex;
-			for (var i = 0, len = table.rows.length; i < len; i++) {
-				var newRow = table.rows[i],
+			for (var i = 0, len = table.Rows.length; i < len; i++) {
+				var newRow = table.Rows[i],
 					newCell = newRow.cells[index];
 				if (newCell.colSpan > 1) {
 					newCell.colSpan -= 1;
@@ -10097,7 +10097,7 @@ KindEditor.plugin('table', function(K) {
 			for (var i = cell.rowSpan - 1; i >= 0; i--) {
 				table.deleteRow(rowIndex + i);
 			}
-			if (table.rows.length === 0) {
+			if (table.Rows.length === 0) {
 				self.cmd.range.setStartBefore(table).collapse(true);
 				self.cmd.select();
 				K(table).remove();

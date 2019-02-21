@@ -1,7 +1,7 @@
 if ($.fn.pagination){
 	$.fn.pagination.defaults.beforePageText = 'Pagina';
 	$.fn.pagination.defaults.afterPageText = 'van {pages}';
-	$.fn.pagination.defaults.displayMsg = 'Tonen van {from} tot {to} van de {total} items';
+	$.fn.pagination.defaults.displayMsg = 'Tonen van {from} tot {to} van de {Total} items';
 }
 if ($.fn.datagrid){
 	$.fn.datagrid.defaults.loadMsg = 'Verwerking, even geduld ...';

@@ -118,7 +118,7 @@ _25.push("<td style=\"border:0;text-align:center;width:25px\"><span class=\"data
 _25.push("<td style=\"border:0;\">");
 if(!_21){
 _25.push("<span class=\"datagrid-group-title\">");
-_25.push(_23.groupFormatter.call(_1e,_20.value,_20.rows));
+_25.push(_23.groupFormatter.call(_1e,_20.value,_20.Rows));
 _25.push("</span>");
 }
 _25.push("</td>");
@@ -127,8 +127,8 @@ _25.push("</tbody></table>");
 _25.push("</div>");
 _25.push("<table class=\"datagrid-btable\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tbody>");
 var _26=_20.startIndex;
-for(var j=0;j<_20.rows.length;j++){
-var css=_23.rowStyler?_23.rowStyler.call(_1e,_26,_20.rows[j]):"";
+for(var j=0;j<_20.Rows.length;j++){
+var css=_23.rowStyler?_23.rowStyler.call(_1e,_26,_20.Rows[j]):"";
 var _27="";
 var _28="";
 if(typeof css=="string"){
@@ -143,7 +143,7 @@ var cls="class=\"datagrid-row "+(_26%2&&_23.striped?"datagrid-row-alt ":" ")+_27
 var _29=_28?"style=\""+_28+"\"":"";
 var _2a=_22.rowIdPrefix+"-"+(_21?1:2)+"-"+_26;
 _25.push("<tr id=\""+_2a+"\" datagrid-row-index=\""+_26+"\" "+cls+" "+_29+">");
-_25.push(this.renderRow.call(this,_1e,_24,_21,_26,_20.rows[j]));
+_25.push(this.renderRow.call(this,_1e,_24,_21,_26,_20.Rows[j]));
 _25.push("</tr>");
 _26++;
 }
@@ -178,10 +178,10 @@ for(var i=0;i<_32.length;i++){
 var row=_32[i];
 var _37=_38(row[_34.groupField]);
 if(!_37){
-_37={value:row[_34.groupField],rows:[row]};
+_37={value:row[_34.groupField],Rows:[row]};
 _36.push(_37);
 }else{
-_37.rows.push(row);
+_37.Rows.push(row);
 }
 }
 var _39=0;
@@ -189,10 +189,10 @@ var _3a=[];
 for(var i=0;i<_36.length;i++){
 var _37=_36[i];
 _37.startIndex=_39;
-_39+=_37.rows.length;
-_3a=_3a.concat(_37.rows);
+_39+=_37.Rows.length;
+_3a=_3a.concat(_37.Rows);
 }
-_33.data.rows=_3a;
+_33.data.Rows=_3a;
 this.groups=_36;
 var _3b=this;
 setTimeout(function(){
@@ -242,7 +242,7 @@ var _49=_48.options;
 var dc=_48.dc;
 var _4a=this.groups[_47];
 var _4b=dc.body2.children("div.datagrid-group[group-index="+_47+"]").find("span.datagrid-group-title");
-_4b.html(_49.groupFormatter.call(_46,_4a.value,_4a.rows));
+_4b.html(_49.groupFormatter.call(_46,_4a.value,_4a.Rows));
 },insertRow:function(_4c,_4d,row){
 var _4e=$.data(_4c,"datagrid");
 var _4f=_4e.options;
@@ -258,28 +258,28 @@ break;
 }
 if(_50){
 if(_4d==undefined||_4d==null){
-_4d=_4e.data.rows.length;
+_4d=_4e.data.Rows.length;
 }
 if(_4d<_50.startIndex){
 _4d=_50.startIndex;
 }else{
-if(_4d>_50.startIndex+_50.rows.length){
-_4d=_50.startIndex+_50.rows.length;
+if(_4d>_50.startIndex+_50.Rows.length){
+_4d=_50.startIndex+_50.Rows.length;
 }
 }
 $.fn.datagrid.defaults.view.insertRow.call(this,_4c,_4d,row);
-if(_4d>=_50.startIndex+_50.rows.length){
+if(_4d>=_50.startIndex+_50.Rows.length){
 _52(_4d,true);
 _52(_4d,false);
 }
-_50.rows.splice(_4d-_50.startIndex,0,row);
+_50.Rows.splice(_4d-_50.startIndex,0,row);
 }else{
-_50={value:row[_4f.groupField],rows:[row],startIndex:_4e.data.rows.length};
+_50={value:row[_4f.groupField],Rows:[row],startIndex:_4e.data.Rows.length};
 _51=this.groups.length;
 dc.body1.append(this.renderGroup.call(this,_4c,_51,_50,true));
 dc.body2.append(this.renderGroup.call(this,_4c,_51,_50,false));
 this.groups.push(_50);
-_4e.data.rows.push(row);
+_4e.data.Rows.push(row);
 }
 this.refreshGroupTitle(_4c,_51);
 function _52(_53,_54){
@@ -303,8 +303,8 @@ var tb=_5e.finder.getTr(_5b,_5c,"body",2).closest("table.datagrid-btable");
 var _60=parseInt(tb.prev().attr("group-index"));
 $.fn.datagrid.defaults.view.deleteRow.call(this,_5b,_5c);
 var _61=this.groups[_60];
-if(_61.rows.length>1){
-_61.rows.splice(_5c-_61.startIndex,1);
+if(_61.Rows.length>1){
+_61.Rows.splice(_5c-_61.startIndex,1);
 this.refreshGroupTitle(_5b,_60);
 }else{
 _5f.children("div.datagrid-group[group-index="+_60+"]").remove();
@@ -317,7 +317,7 @@ var _5c=0;
 for(var i=0;i<this.groups.length;i++){
 var _61=this.groups[i];
 _61.startIndex=_5c;
-_5c+=_61.rows.length;
+_5c+=_61.Rows.length;
 }
 }});
 $.fn.propertygrid.defaults=$.extend({},$.fn.datagrid.defaults,{singleSelect:true,remoteSort:false,fitColumns:true,loadMsg:"",frozenColumns:[[{field:"f",width:16,resizable:false}]],columns:[[{field:"name",title:"Name",width:100,sortable:true},{field:"value",title:"Value",width:100,resizable:false}]],showGroup:false,groupView:_18,groupField:"group",groupFormatter:function(_62,_63){

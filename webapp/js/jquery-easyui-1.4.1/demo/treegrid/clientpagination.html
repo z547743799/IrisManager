@@ -43,8 +43,8 @@
 			function pagerFilter(data){
 		        if ($.isArray(data)){    // is array  
 		            data = {  
-		                total: data.length,  
-		                rows: data  
+		                Total: data.length,  
+		                Rows: data  
 		            }  
 		        }
 		        var dg = $(this);  
@@ -63,17 +63,17 @@
 		            }  
 		        });  
 		        if (!state.originalRows){
-		        	state.originalRows = data.rows;
+		        	state.originalRows = data.Rows;
 		        }
 		        var topRows = [];
 		        var childRows = [];
 		        $.map(state.originalRows, function(row){
 		        	row._parentId ? childRows.push(row) : topRows.push(row);
 		        });
-		        data.total = topRows.length;
+		        data.Total = topRows.length;
 		        var start = (opts.pageNumber-1)*parseInt(opts.pageSize);  
 		        var end = start + parseInt(opts.pageSize);  
-				data.rows = $.extend(true,[],topRows.slice(start, end).concat(childRows));
+				data.Rows = $.extend(true,[],topRows.slice(start, end).concat(childRows));
 				return data;
 			}
 

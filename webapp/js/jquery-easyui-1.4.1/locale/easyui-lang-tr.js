@@ -1,7 +1,7 @@
 if ($.fn.pagination){
     $.fn.pagination.defaults.beforePageText = 'Sayfa';
     $.fn.pagination.defaults.afterPageText = ' / {pages}';
-    $.fn.pagination.defaults.displayMsg = '{from} ile {to} arası gösteriliyor, toplam {total} kayıt';
+    $.fn.pagination.defaults.displayMsg = '{from} ile {to} arası gösteriliyor, toplam {Total} kayıt';
 }
 if ($.fn.datagrid){
     $.fn.panel.defaults.loadingMessage = "Yükleniyor...";

@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h2>DataGrid Selection</h2>
-	<p>Choose a selection mode and select one or more rows.</p>
+	<p>Choose a selection mode and select one or more Rows.</p>
 	<div style="margin:20px 0;">
 		<a href="#" class="easyui-linkbutton" onclick="getSelected()">GetSelected</a>
 		<a href="#" class="easyui-linkbutton" onclick="getSelections()">GetSelections</a>
@@ -45,9 +45,9 @@
 		}
 		function getSelections(){
 			var ss = [];
-			var rows = $('#dg').datagrid('getSelections');
-			for(var i=0; i<rows.length; i++){
-				var row = rows[i];
+			var Rows = $('#dg').datagrid('getSelections');
+			for(var i=0; i<Rows.length; i++){
+				var row = Rows[i];
 				ss.push('<span>'+row.itemid+":"+row.productid+":"+row.attr1+'</span>');
 			}
 			$.messager.alert('Info', ss.join('<br/>'));

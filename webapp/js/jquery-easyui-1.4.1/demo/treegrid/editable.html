@@ -69,9 +69,9 @@
 				t.treegrid('endEdit', editingId);
 				editingId = undefined;
 				var persons = 0;
-				var rows = t.treegrid('getChildren');
-				for(var i=0; i<rows.length; i++){
-					var p = parseInt(rows[i].persons);
+				var Rows = t.treegrid('getChildren');
+				for(var i=0; i<Rows.length; i++){
+					var p = parseInt(Rows[i].persons);
 					if (!isNaN(p)){
 						persons += p;
 					}

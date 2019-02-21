@@ -50,9 +50,9 @@
 		}
 		function getChanges(){
 			var s = '';
-			var rows = $('#pg').propertygrid('getChanges');
-			for(var i=0; i<rows.length; i++){
-				s += rows[i].name + ':' + rows[i].value + ',';
+			var Rows = $('#pg').propertygrid('getChanges');
+			for(var i=0; i<Rows.length; i++){
+				s += Rows[i].name + ':' + Rows[i].value + ',';
 			}
 			alert(s)
 		}

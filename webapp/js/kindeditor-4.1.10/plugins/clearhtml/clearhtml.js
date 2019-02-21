@@ -19,7 +19,7 @@ KindEditor.plugin('clearhtml', function(K) {
 			embed : ['src', 'width', 'height', 'type', 'loop', 'autostart', 'quality', '.width', '.height', 'align', 'allowscriptaccess'],
 			img : ['src', 'width', 'height', 'border', 'alt', 'title', '.width', '.height'],
 			table : ['border'],
-			'td,th' : ['rowspan', 'colspan'],
+			'td,th' : ['Rowspan', 'colspan'],
 			'div,hr,br,tbody,tr,p,ol,ul,li,blockquote,h1,h2,h3,h4,h5,h6' : []
 		});
 		self.html(html);

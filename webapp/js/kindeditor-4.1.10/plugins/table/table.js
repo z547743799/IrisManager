@@ -68,10 +68,10 @@ KindEditor.plugin('table', function(K) {
 		prop : function(isInsert) {
 			var html = [
 				'<div style="padding:20px;">',
-				//rows, cols
+				//Rows, cols
 				'<div class="ke-dialog-row">',
 				'<label for="keRows" style="width:90px;">' + lang.cells + '</label>',
-				lang.rows + ' <input type="text" id="keRows" class="ke-input-text ke-input-number" name="rows" value="" maxlength="4" /> &nbsp; ',
+				lang.Rows + ' <input type="text" id="keRows" class="ke-input-text ke-input-number" name="Rows" value="" maxlength="4" /> &nbsp; ',
 				lang.cols + ' <input type="text" class="ke-input-text ke-input-number" name="cols" value="" maxlength="4" />',
 				'</div>',
 				//width, height
@@ -129,7 +129,7 @@ KindEditor.plugin('table', function(K) {
 				yesBtn : {
 					name : self.lang('yes'),
 					click : function(e) {
-						var rows = rowsBox.val(),
+						var Rows = RowsBox.val(),
 							cols = colsBox.val(),
 							width = widthBox.val(),
 							height = heightBox.val(),
@@ -141,9 +141,9 @@ KindEditor.plugin('table', function(K) {
 							border = borderBox.val(),
 							borderColor = K(colorBox[0]).html() || '',
 							bgColor = K(colorBox[1]).html() || '';
-						if (rows == 0 || !/^\d+$/.test(rows)) {
+						if (Rows == 0 || !/^\d+$/.test(Rows)) {
 							alert(self.lang('invalidRows'));
-							rowsBox[0].focus();
+							RowsBox[0].focus();
 							return;
 						}
 						if (cols == 0 || !/^\d+$/.test(cols)) {
@@ -268,7 +268,7 @@ KindEditor.plugin('table', function(K) {
 							html += ' bordercolor="' + borderColor + '"';
 						}
 						html += '>';
-						for (var i = 0; i < rows; i++) {
+						for (var i = 0; i < Rows; i++) {
 							html += '<tr>';
 							for (var j = 0; j < cols; j++) {
 								html += '<td>' + (K.IE ? '&nbsp;' : '<br />') + '</td>';
@@ -286,7 +286,7 @@ KindEditor.plugin('table', function(K) {
 				}
 			}),
 			div = dialog.div,
-			rowsBox = K('[name="rows"]', div).val(3),
+			RowsBox = K('[name="Rows"]', div).val(3),
 			colsBox = K('[name="cols"]', div).val(2),
 			widthBox = K('[name="width"]', div).val(100),
 			heightBox = K('[name="height"]', div),
@@ -302,8 +302,8 @@ KindEditor.plugin('table', function(K) {
 			_setColor(colorBox.eq(0), '#000000');
 			_setColor(colorBox.eq(1), '');
 			// foucs and select
-			rowsBox[0].focus();
-			rowsBox[0].select();
+			RowsBox[0].focus();
+			RowsBox[0].select();
 			var table;
 			if (isInsert) {
 				return;
@@ -311,9 +311,9 @@ KindEditor.plugin('table', function(K) {
 			//get selected table node
 			table = self.plugin.getSelectedTable();
 			if (table) {
-				rowsBox.val(table[0].rows.length);
-				colsBox.val(table[0].rows.length > 0 ? table[0].rows[0].cells.length : 0);
-				rowsBox.attr('disabled', true);
+				RowsBox.val(table[0].Rows.length);
+				colsBox.val(table[0].Rows.length > 0 ? table[0].Rows[0].cells.length : 0);
+				RowsBox.attr('disabled', true);
 				colsBox.attr('disabled', true);
 				var match,
 					tableWidth = table[0].style.width || table[0].width,
@@ -502,10 +502,10 @@ KindEditor.plugin('table', function(K) {
 				cell = self.plugin.getSelectedCell()[0],
 				index = cell.cellIndex + offset;
 			// 取得第一行的index
-			index += table.rows[0].cells.length - row.cells.length;
+			index += table.Rows[0].cells.length - row.cells.length;
 
-			for (var i = 0, len = table.rows.length; i < len; i++) {
-				var newRow = table.rows[i],
+			for (var i = 0, len = table.Rows.length; i < len; i++) {
+				var newRow = table.Rows[i],
 					newCell = newRow.insertCell(index);
 				newCell.innerHTML = K.IE ? '' : '<br />';
 				// 调整下一行的单元格index
@@ -543,9 +543,9 @@ KindEditor.plugin('table', function(K) {
 				}
 				newCell.innerHTML = K.IE ? '' : '<br />';
 			}
-			// 调整rowspan
+			// 调整Rowspan
 			for (var j = rowIndex; j >= 0; j--) {
-				var cells = table.rows[j].cells;
+				var cells = table.Rows[j].cells;
 				if (cells.length > i) {
 					for (var k = cell.cellIndex; k >= 0; k--) {
 						if (cells[k].rowSpan > 1) {
@@ -571,9 +571,9 @@ KindEditor.plugin('table', function(K) {
 				cell = self.plugin.getSelectedCell()[0],
 				rowIndex = row.rowIndex, // 当前行的index
 				nextRowIndex = rowIndex + cell.rowSpan, // 下一行的index
-				nextRow = table.rows[nextRowIndex]; // 下一行
+				nextRow = table.Rows[nextRowIndex]; // 下一行
 			// 最后一行不能合并
-			if (table.rows.length <= nextRowIndex) {
+			if (table.Rows.length <= nextRowIndex) {
 				return;
 			}
 			var cellIndex = cell.cellIndex; // 下一行单元格的index
@@ -603,7 +603,7 @@ KindEditor.plugin('table', function(K) {
 				return;
 			}
 			var nextCell = row.cells[nextCellIndex];
-			// 左右列的rowspan不一致时不能合并
+			// 左右列的Rowspan不一致时不能合并
 			if (cell.rowSpan !== nextCell.rowSpan) {
 				return;
 			}
@@ -613,7 +613,7 @@ KindEditor.plugin('table', function(K) {
 			self.cmd.select();
 			self.addBookmark();
 		},
-		rowsplit : function() {
+		Rowsplit : function() {
 			var table = self.plugin.getSelectedTable()[0],
 				row = self.plugin.getSelectedRow()[0],
 				cell = self.plugin.getSelectedCell()[0],
@@ -624,7 +624,7 @@ KindEditor.plugin('table', function(K) {
 			}
 			var cellIndex = _getCellIndex(table, row, cell);
 			for (var i = 1, len = cell.rowSpan; i < len; i++) {
-				var newRow = table.rows[rowIndex + i],
+				var newRow = table.Rows[rowIndex + i],
 					newCell = newRow.insertCell(cellIndex);
 				if (cell.colSpan > 1) {
 					newCell.colSpan = cell.colSpan;
@@ -664,8 +664,8 @@ KindEditor.plugin('table', function(K) {
 				row = self.plugin.getSelectedRow()[0],
 				cell = self.plugin.getSelectedCell()[0],
 				index = cell.cellIndex;
-			for (var i = 0, len = table.rows.length; i < len; i++) {
-				var newRow = table.rows[i],
+			for (var i = 0, len = table.Rows.length; i < len; i++) {
+				var newRow = table.Rows[i],
 					newCell = newRow.cells[index];
 				if (newCell.colSpan > 1) {
 					newCell.colSpan -= 1;
@@ -698,7 +698,7 @@ KindEditor.plugin('table', function(K) {
 			for (var i = cell.rowSpan - 1; i >= 0; i--) {
 				table.deleteRow(rowIndex + i);
 			}
-			if (table.rows.length === 0) {
+			if (table.Rows.length === 0) {
 				self.cmd.range.setStartBefore(table).collapse(true);
 				self.cmd.select();
 				K(table).remove();

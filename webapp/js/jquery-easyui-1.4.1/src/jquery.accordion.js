@@ -42,7 +42,7 @@
 		_resize(true, bodyHeight - _resize(false) + 1);
 		
 		function _resize(collapsible, height){
-			var totalHeight = 0;
+			var TotalHeight = 0;
 			for(var i=0; i<panels.length; i++){
 				var p = panels[i];
 				var h = p.panel('header')._outerHeight(headerHeight);
@@ -52,10 +52,10 @@
 						width: cc.width(),
 						height: (collapsible ? pheight : undefined)
 					});
-					totalHeight += p.panel('panel').outerHeight()-headerHeight*h.length;
+					TotalHeight += p.panel('panel').outerHeight()-headerHeight*h.length;
 				}
 			}
-			return totalHeight;
+			return TotalHeight;
 		}
 	}
 	

@@ -15,7 +15,7 @@ var X *xorm.Engine
 
 func init() {
 	var err error
-	cfg, err := ini.Load("config/db.ini")
+	cfg, err := ini.Load("/home/lzw/DarkShell/src/gitlab.com/z547743799/irismanager/config/db.ini")
 	if err != nil {
 		log.Fatal(err)
 	}

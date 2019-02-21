@@ -1,76 +1,107 @@
 package service
 
 import (
-	"IrisManager/db"
-	"IrisManager/models"
+	"encoding/json"
+	"fmt"
+	"time"
+
 	"github.com/go-xorm/xorm"
+	"gitlab.com/z547743799/iriscommon/pojo"
+	"gitlab.com/z547743799/iriscontent/redisinit"
+	"gitlab.com/z547743799/irismanager/db"
+	"gitlab.com/z547743799/irismanager/models"
 )
 
 type TbItemService interface {
-	GetAll() []models.TbItem
-	Search(country string) []models.TbItem
 	Get(id int64) *models.TbItem
-	Delete(id int64) error
-	Update(user *models.TbItem, columns []string) error
-	Create(user *models.TbItem) error
+	GetList(page int, rows int) *pojo.EasyUIDataGridResult
+	GetItemDescById(itemid int64) *models.TbItemDesc
 }
-
-
 
 type tbItemService struct {
 	engine *xorm.Engine
 }
 
-func NewTbItemService()TbItemService {
+func NewTbItemService() TbItemService {
 	return &tbItemService{
-		engine:db.X,
+		engine: db.X,
 	}
 }
 
 func (d *tbItemService) Get(id int64) *models.TbItem {
-	data := &models.TbItem{Id:id}
-	ok, err := d.engine.Get(data)
-	if ok && err == nil {
-		return data
+	Data := &models.TbItem{}
+
+	pool := redisinit.Re.Get()
+
+	item, err := pool.Do("get", fmt.Sprintln(id))
+
+	if item != nil || err == nil {
+		err = json.Unmarshal([]byte(item.(string)), Data)
+		if err == nil {
+			return Data
+		}
+	}
+
+	ok, err := d.engine.Where("id=?", id).Get(Data)
+
+	if ok && err == nil || Data != nil {
+
+		var data, err = json.Marshal(Data)
+		if err != nil {
+			return nil
+		}
+
+		pool.Do("set", fmt.Sprintln(id), string(data), "EX", 30*time.Second)
+
+		return Data
 	} else {
-		data.Id = 0
-		return data
+		Data.Id = 0
+		return Data
 	}
 }
-
-func (d *tbItemService) GetAll() []models.TbItem {
+func (d *tbItemService) GetList(page int, rows int) *pojo.EasyUIDataGridResult {
 	datalist := make([]models.TbItem, 0)
 	err := d.engine.Desc("id").Find(&datalist)
+
+	leng := len(datalist)
+
+	result := new(pojo.EasyUIDataGridResult)
+
+	result.Total = leng
+	result.Rows = datalist[(page-1)*rows : page*rows]
 	if err != nil {
-		return datalist
+		return result
 	} else {
-		return datalist
+		return result
 	}
-}
 
-func (d *tbItemService) Search(country string) []models.TbItem {
-	datalist := make([]models.TbItem, 0)
-	err := d.engine.Where("country=?", country).
-		Desc("id").Find(&datalist)
-	if err != nil {
-		return datalist
+}
+func (d *tbItemService) GetItemDescById(itemid int64) *models.TbItemDesc {
+	ItemDesc := &models.TbItemDesc{}
+	pool := redisinit.Re.Get()
+
+	item, err := pool.Do("get", fmt.Sprintln(itemid))
+
+	if item != nil || err == nil {
+		err = json.Unmarshal([]byte(item.(string)), ItemDesc)
+		if err == nil {
+			return ItemDesc
+		}
+	}
+	ok, err := d.engine.Where("item_id=?", itemid).Get(ItemDesc)
+
+	if ok && err == nil || ItemDesc != nil {
+
+		var data, err = json.Marshal(ItemDesc)
+		if err != nil {
+			return nil
+		}
+
+		pool.Do("set", fmt.Sprintln(itemid), string(data), "EX", 30*time.Second)
+
+		return ItemDesc
 	} else {
-		return datalist
+		ItemDesc.ItemId = 0
+		return ItemDesc
 	}
-}
-
-func (d *tbItemService) Delete(id int64) error {
-	data := &models.TbItem{Id:id}
-	_, err := d.engine.Id(data.Id).Update(data)
-	return err
-}
-
-func (d *tbItemService) Update(data *models.TbItem, columns []string) error {
-	_, err := d.engine.Id(data.Id).MustCols(columns...).Update(data)
-	return err
-}
-
-func (d *tbItemService) Create(data *models.TbItem) error {
-	_, err := d.engine.Insert(data)
-	return err
 }

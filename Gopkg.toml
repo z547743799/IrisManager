@@ -27,24 +27,40 @@
 
 [[constraint]]
   name = "github.com/go-ini/ini"
-  version = "1.39.0"
+  version = "1.39.3"
 
 [[constraint]]
   name = "github.com/go-sql-driver/mysql"
-  version = "1.3.0"
+  version = "1.4.1"
+
+[[constraint]]
+  name = "github.com/go-xorm/xorm"
+  version = "0.7.1"
+
+[[constraint]]
+  name = "github.com/gorilla/securecookie"
+  version = "1.1.1"
+
+[[constraint]]
+  name = "github.com/kataras/iris"
+  version = "11.1.0"
 
 [[constraint]]
   branch = "master"
-  name = "github.com/xormplus/xorm"
+  name = "github.com/weilaihui/fdfs_client"
+
+[[constraint]]
+  name = "gitlab.com/z547743799/iriscommon"
+  version = "0.8.0"
+
+[[constraint]]
+  name = "gitlab.com/z547743799/iriscontent"
+  version = "0.9.0"
+
+[[constraint]]
+  name = "gitlab.com/z547743799/irissearch"
+  version = "0.8.0"
 
 [prune]
   go-tests = true
   unused-packages = true
-
-[[constraint]]
-  branch = "v0.7.0.0908"
-  name = "github.com/xormplus/xorm.git"
-
-[[constraint]]
-  branch = "master"
-  name = "golang.org/x/crypto"

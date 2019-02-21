@@ -45,7 +45,7 @@ Version 1.4
 Version 1.3.6
 -------------
 * Bug
- * treegrid: The 'getChecked' method can not return correct checked rows. fixed.
+ * treegrid: The 'getChecked' method can not return correct checked Rows. fixed.
  * tree: The checkbox does not display properly on async tree when 'onlyLeafCheck' property is true. fixed.
 * Improvement
  * treegrid: All the selecting and checking methods are extended from datagrid component.
@@ -76,7 +76,7 @@ Version 1.3.5
  * combo: Clicking combo will trigger the 'onHidePanel' event of other combo components that have hidden drop-down panels. fixed.
  * combogrid: Some methods can not inherit from combo. fixed.
 * Improvement
- * datagrid: Improve performance on checking rows.
+ * datagrid: Improve performance on checking Rows.
  * menu: Allows to append a menu separator.
  * menu: Add 'hideOnUnhover' property to indicate if the menu should be hidden when mouse exits it.
  * slider: Add 'clear' and 'reset' methods.
@@ -149,7 +149,7 @@ Version 1.3.2
  * datagrid: Add a column level property 'order' that allows users to define different default sort order per column.
  * datagrid: Add a column level property 'halign' that allows users to define how to align the column header.
  * datagrid: Add 'resizeHandle' property to define the resizing column position, by grabbing the left or right edge of the column.
- * datagrid: Add 'freezeRow' method to freeze some rows that will always be displayed at the top when the datagrid is scrolled down.
+ * datagrid: Add 'freezeRow' method to freeze some Rows that will always be displayed at the top when the datagrid is scrolled down.
  * datagrid: Add 'clearChecked' method to clear all checked records.
  * datagrid: Add 'data' property to initialize the datagrid data.
  * linkbutton: Add 'iconAlgin' property to define the icon position, supported values are: 'left','right'.
@@ -173,7 +173,7 @@ Version 1.3.1
 -------------
 * Bug
  * datagrid: Setting the 'pageNumber' property is not valid. fixed.
- * datagrid: The id attribute of rows isn't adjusted properly while calling 'insertRow' or 'deleteRow' method.
+ * datagrid: The id attribute of Rows isn't adjusted properly while calling 'insertRow' or 'deleteRow' method.
  * dialog: When load content from 'href', the script will run twice. fixed.
  * propertygrid: The editors that extended from combo can not accept its changed value. fixed.
 * Improvement
@@ -208,7 +208,7 @@ Version 1.3
  * datagrid: Auto resize the column width to fit the contents when the column width is not defined.
  * datagrid: Double click on the right border of columns to auto resize the columns to the contents in the columns.
  * datagrid: Add 'autoSizeColumn' method that allows users to adjust the column width to fit the contents.
- * datagrid: Add 'getChecked' method to get all rows where the checkbox has been checked.
+ * datagrid: Add 'getChecked' method to get all Rows where the checkbox has been checked.
  * datagrid: Add 'selectOnCheck' and 'checkOnSelect' properties and some checking methods to enhance the row selections.
  * datagrid: Add 'pagePosition' property to allow users to display pager bar at either top,bottom or both places of the grid.
  * datagrid: The buffer view and virtual scroll view are supported to display large amounts of records without pagination.
@@ -376,7 +376,7 @@ Version 1.1
 * Bug
  * messager: When call show method with timeout property setted, an error occurs while clicking the close button. fixed.
  * combobox: The editable property of combobox plugin is invalid. fixed.
- * window: The proxy box will not be removed when dragging or resizing exceed browser border in ie. fixed.
+ * window: The proxy box will not be removed when dragging or resizing exceed bRowser border in ie. fixed.
 * Improvement
  * menu: The menu item can use <a> markup to display a different page.
  * tree: The tree node can use <a> markup to act as a tree menu.
@@ -396,7 +396,7 @@ Version 1.0.5
 * Bug
  * panel: The fit property of panel performs incorrectly. fixed.
 * Improvement
- * menu: Add a href attribute for menu item, with which user can display a different page in the current browser window.
+ * menu: Add a href attribute for menu item, with which user can display a different page in the current bRowser window.
  * form: Add a validate method to do validation for validatebox component.
  * dialog: The dialog can read collapsible,minimizable,maximizable and resizable attribute from markup.
 * New Plugins

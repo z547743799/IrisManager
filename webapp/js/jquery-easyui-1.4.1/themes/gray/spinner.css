@@ -61,10 +61,10 @@
   filter: alpha(opacity=60);
 }
 .spinner-arrow-up {
-  background: url('images/spinner_arrows.png') no-repeat 1px center;
+  background: url('images/spinner_arRows.png') no-repeat 1px center;
 }
 .spinner-arrow-down {
-  background: url('images/spinner_arrows.png') no-repeat -15px center;
+  background: url('images/spinner_arRows.png') no-repeat -15px center;
 }
 .spinner {
   border-color: #D3D3D3;

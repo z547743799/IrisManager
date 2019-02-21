@@ -1,7 +1,7 @@
 if ($.fn.pagination){
 	$.fn.pagination.defaults.beforePageText = 'Page';
 	$.fn.pagination.defaults.afterPageText = 'de {pages}';
-	$.fn.pagination.defaults.displayMsg = 'Affichage de {from} et {to} au {total} des articles';
+	$.fn.pagination.defaults.displayMsg = 'Affichage de {from} et {to} au {Total} des articles';
 }
 if ($.fn.datagrid){
 	$.fn.datagrid.defaults.loadMsg = "Traitement, s'il vous plaît patienter ...";

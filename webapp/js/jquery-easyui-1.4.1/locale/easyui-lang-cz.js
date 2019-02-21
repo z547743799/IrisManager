@@ -1,7 +1,7 @@
 if ($.fn.pagination){
 	$.fn.pagination.defaults.beforePageText = 'Strana';
 	$.fn.pagination.defaults.afterPageText = 'z {pages}';
-	$.fn.pagination.defaults.displayMsg = 'Zobrazuji záznam {from} až {to} z {total}.';
+	$.fn.pagination.defaults.displayMsg = 'Zobrazuji záznam {from} až {to} z {Total}.';
 }
 if ($.fn.datagrid){
 	$.fn.datagrid.defaults.loadMsg = 'Pracuji, čekejte prosím…';

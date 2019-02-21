@@ -26,7 +26,7 @@ K.extend(KSWFUpload, {
 			'<div class="ke-swfupload">',
 			'<div class="ke-swfupload-top">',
 			'<div class="ke-inline-block ke-swfupload-button">',
-			'<input type="button" value="Browse" />',
+			'<input type="button" value="BRowse" />',
 			'</div>',
 			'<div class="ke-inline-block ke-swfupload-desc">' + options.uploadDesc + '</div>',
 			'<span class="ke-button-common ke-button-outer ke-swfupload-startupload">',
@@ -511,7 +511,7 @@ SWFUpload.prototype.loadFlash = function () {
 
 	// Append the container and load the flash
 	tempParent = document.createElement("div");
-	tempParent.innerHTML = this.getFlashHTML();	// Using innerHTML is non-standard but the only sensible way to dynamically add Flash in IE (and maybe other browsers)
+	tempParent.innerHTML = this.getFlashHTML();	// Using innerHTML is non-standard but the only sensible way to dynamically add Flash in IE (and maybe other bRowsers)
 	targetElement.parentNode.replaceChild(tempParent.firstChild, targetElement);
 
 	// Fix IE Flash/Form bug
@@ -1133,7 +1133,7 @@ SWFUpload.prototype.cleanUp = function (movieElement) {
 };
 
 
-/* This is a chance to do something before the browse window opens */
+/* This is a chance to do something before the bRowse window opens */
 SWFUpload.prototype.fileDialogStart = function () {
 	this.queueEvent("file_dialog_start_handler");
 };

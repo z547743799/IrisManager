@@ -1,10 +1,12 @@
 package controller
 
 import (
-	"IrisManager/service"
-	"IrisManager/utils"
+	"fmt"
 
 	"github.com/kataras/iris"
+	"gitlab.com/z547743799/irismanager/models"
+	"gitlab.com/z547743799/irismanager/service"
+	"gitlab.com/z547743799/iriscommon/utils"
 )
 
 // DeptController operate dept
@@ -22,8 +24,30 @@ type ItemController struct {
 func (c *ItemController) GetBy(id int64) {
 	data := c.Service.Get(id)
 	utils.Json(c.Ctx, data)
+	ns := make(map[string]interface{})
+	ns["ssd"] = 0
+	ns["url"] = "---------"
+
+	c.Ctx.JSON(ns)
 }
 func (c *ItemController) GetList() {
+	pa := c.Ctx.Params().Get("page")
+	fmt.Println(pa)
+
+	page, _ := c.Ctx.URLParamInt("page")
+	rows, _ := c.Ctx.URLParamInt("Rows")
+	fmt.Println(rows + page)
+	data := c.Service.GetList(page, rows)
+	utils.Json(c.Ctx, data)
+
 }
-func (c *ItemController) GetSeve() {
+
+func (c ItemController) PostSave() {
+	itme := c.Ctx.FormValues()
+	ss := models.TbItem{}
+	_ = c.Ctx.ReadForm(&ss)
+
+	//	parentId, _ := c.Ctx.Po
+	fmt.Println(itme)
+
 }

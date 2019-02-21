@@ -37,19 +37,19 @@
 		function onLoadSuccess(data){
 			var merges = [{
 				index: 2,
-				rowspan: 2
+				Rowspan: 2
 			},{
 				index: 5,
-				rowspan: 2
+				Rowspan: 2
 			},{
 				index: 7,
-				rowspan: 2
+				Rowspan: 2
 			}];
 			for(var i=0; i<merges.length; i++){
 				$(this).datagrid('mergeCells',{
 					index: merges[i].index,
 					field: 'productid',
-					rowspan: merges[i].rowspan
+					Rowspan: merges[i].Rowspan
 				});
 			}
 		}
